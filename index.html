@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Product Explorer</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="brand">ShopExplorer</div>
+        <nav class="main-nav">
+            <a href="#">Products</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="search-area">
+            <input id="search-input" type="text" placeholder="Search products...">
+            <select id="category-filter">
+                <option value="">All Categories</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div id="loading-state" class="loading-state">Loading products...</div>
+        <div id="product-grid" class="product-grid" style="display: none;"></div>
+    </main>
+
+    <!-- Modal for View Details -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>

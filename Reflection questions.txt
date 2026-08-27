@@ -1,0 +1,3 @@
+9.What did AI help me with? troubleshooting and mentorship
+What did I have to understand and verify myself? The errors through the dev tools
+Which AI suggestion did I reject or modify, and why? overengineering aspects 
