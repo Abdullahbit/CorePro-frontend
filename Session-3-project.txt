@@ -1,0 +1,341 @@
+Frontend Practical Assignment
+React Task Manager
+Scenario
+You are working as a Frontend Developer for a productivity platform called TaskFlow.
+Your task is to build a responsive Task Manager application using React and TypeScript.
+The application should allow users to view, add, complete, and delete tasks while
+demonstrating proper React component structure, props, state management, events, and
+useEffect.
+The goal is not only to make the application work, but to build it using React thinking and
+reusable components.
+Requirements
+1. Application Header
+Create a header containing:
+● Application name: TaskFlow
+● Short description such as:
+Organize your tasks. Stay productive.
+The header should be implemented as a separate React component.
+2. Task Summary
+Create a summary section showing:
+● Total tasks
+● Completed tasks
+● Remaining tasks
+Example:
+Total: 8
+Completed: 3
+Remaining: 5
+The values must update automatically when the task state changes.
+3. Add Task
+Create a form that allows the user to add a new task.
+The form should contain:
+● Task title input
+● Add Task button
+Requirements:
+● The task title cannot be empty.
+● When the user adds a task, the UI should update immediately.
+● The new task should be added to the existing tasks state.
+● Do not directly modify the existing state array.
+4. Task List
+Display the tasks inside a reusable task list.
+Each task should display:
+● Task title
+● Completed / Pending status
+● Toggle completion control
+● Delete button
+Example:
+☐ Learn React Props Pending Delete
+☑ Practice useState Completed Delete
+☐ Build Task Manager Pending Delete
+The task list should be generated dynamically from the tasks state.
+Do not manually create a component for every task.
+5. Complete / Uncomplete Task
+The user must be able to change a task between:
+Pending ↔ Completed
+When the status changes:
+● Update the React state.
+● Update the UI automatically.
+● Update the task summary.
+Do not manipulate the DOM manually.
+6. Delete Task
+Each task should contain a Delete button.
+When clicked:
+● Remove the correct task from the state.
+● Update the task list.
+● Update the task summary.
+The original state array should not be directly mutated.
+7. Task Filters
+Create three filters:
+All | Pending | Completed
+All
+Display all tasks.
+Pending
+Display only tasks that are not completed.
+Completed
+Display only completed tasks.
+Filtering should be derived from the current application state.
+8. Empty State
+Display a clear message when there are no tasks to display.
+Example:
+No tasks found.
+The message should also work correctly when a filter has no matching tasks.
+For example, if there are no completed tasks:
+No completed tasks yet.
+9. Initial Data
+When the application starts, load an initial list of tasks from an API.
+Use:
+https://dummyjson.com/todos
+Use useEffect to perform the initial data loading.
+The fetched data should then be stored inside React state and displayed using your
+React components.
+10. Loading & Error States
+While the initial tasks are being loaded, display a loading state.
+Example:
+Loading tasks...
+If loading fails, display a clear error message.
+Example:
+Something went wrong while loading tasks.
+The application should not crash if the API request fails.
+React Component Requirements
+Before writing the implementation, analyze the interface and divide it into appropriate
+React components.
+Your structure may include components such as:
+App
+│
+├── Header
+│
+├── TaskSummary
+│
+├── AddTaskForm
+│
+├── TaskFilters
+│
+└── TaskList
+│
+└── TaskItem
+You may modify this structure if you can explain your decision.
+Your implementation should demonstrate:
+● Parent and child components
+● Reusable components
+● Props
+● State
+● Event handling
+● Passing functions through props
+● Rendering lists
+● Conditional rendering
+Avoid creating one large component containing the entire application.
+TypeScript Requirements
+The project must use React with TypeScript.
+Create appropriate types/interfaces for your data.
+For example:
+interface Task {
+id: number;
+todo: string;
+completed: boolean;
+}
+Use typed:
+● Props
+● State
+● Functions
+● Event handlers
+● API data where appropriate
+Avoid using any unless you can explain why it is necessary.
+State Requirements
+Use React state to manage application behavior.
+Your state may include:
+tasks
+filter
+loading
+error
+Use useState where appropriate.
+State updates should be immutable.
+For arrays, use approaches such as:
+map()
+filter()
+spread operator
+instead of directly modifying the existing array.
+useEffect Requirements
+Use useEffect for the initial API request.
+The application should:
+Component renders
+↓
+useEffect runs
+↓
+Fetch tasks
+↓
+Update state
+↓
+UI re-renders
+Use the dependency array correctly based on the required behavior.
+UI & Responsive Requirements
+The application should have a clean and usable interface.
+It must work correctly on:
+● Desktop
+● Tablet
+● Mobile
+The layout should demonstrate concepts from the previous sessions where appropriate:
+● Flexbox
+● CSS Grid
+● Responsive units
+● CSS variables
+● Media queries where necessary
+● Appropriate spacing
+● Readable typography
+● Accessible buttons and form controls
+Do not create a breakpoint for every specific device.
+Choose breakpoints based on when the layout actually needs to change.
+Figma → React Requirement
+Before implementation, create or choose a simple UI design for the Task Manager.
+You may use:
+● Figma
+● An AI design tool
+● A design reference
+Analyze the design before coding.
+Identify:
+● Main sections
+● Component boundaries
+● Repeated elements
+● Layout relationships
+● Responsive behavior
+Remember:
+A design is a specification to analyze, not just an image to copy.
+Technical Requirements
+The implementation must demonstrate the concepts covered in Session 3.
+React
+Use:
+● Functional Components
+● JSX
+● Props
+● useState
+● useEffect
+● Event handling
+● Conditional rendering
+● List rendering with map()
+● Proper key
+● Component communication
+● Immutable state updates
+TypeScript
+Use:
+● Interfaces / Types
+● Typed props
+● Typed state
+● Typed functions
+● Typed API data
+Previous Session Knowledge
+Apply where appropriate:
+● const / let
+● Arrow functions
+● Destructuring
+● Spread operator
+● map()
+● filter()
+● async/await
+● Fetch API
+● Error handling
+● Responsive CSS
+AI Usage Requirements
+AI must be used as an engineering assistant, not as a replacement for your work.
+You must use AI during at least three stages.
+Task 1 — Component Planning
+Before implementation, provide AI with the project requirements or UI design.
+Ask:
+Analyze this Task Manager interface and suggest a React component
+hierarchy. Explain each component's responsibility, parent-child
+relationships, reusable elements, and required props. Do not write the
+implementation code.
+Review the proposed structure yourself.
+You may accept, reject, or modify AI suggestions.
+This mirrors the component-analysis approach used in the Session 3 hands-on.
+Task 2 — Implementation Review
+After implementing the main functionality, ask AI to review your React code for:
+● Component responsibilities
+● Props usage
+● State location
+● State mutations
+● Repeated code
+● TypeScript typing
+● useEffect
+● List keys
+● Unnecessary re-renders
+● Maintainability
+Ask AI:
+Identify the problems and explain why they are problems. Do not rewrite the
+entire application.
+Task 3 — Testing & Debugging
+Test the application yourself and also use AI to help review the behavior.
+Test:
+● Adding tasks
+● Empty task validation
+● Completing tasks
+● Returning completed tasks to pending
+● Deleting tasks
+● Filters
+● Summary values
+● API loading
+● Loading state
+● Error state
+● Responsive behavior
+When a problem is found, provide AI with:
+● Relevant code
+● Expected behavior
+● Actual behavior
+● Error message if available
+Ask AI to explain the likely root cause before suggesting a solution.
+This follows the Session 3 workflow of using AI for testing while still manually testing
+and reviewing the generated code.
+Deliverables
+Submit:
+1. Complete React project source code
+2. package.json
+3. React + TypeScript source files
+4. CSS files
+5. Required assets
+6. Desktop screenshot
+7. Mobile screenshot
+8. Component hierarchy diagram
+9. Three AI prompts used during development
+10. Short reflection answering:
+What did AI help me with?
+What did I have to understand and verify myself?
+Which AI suggestion did I reject or modify, and why?
+How did I decide where state should live?
+Bonus Challenge
+Choose one or more of the following improvements:
+● Search tasks by title
+● Edit an existing task
+● Add task priority: Low / Medium / High
+● Add task creation date
+● Add a Clear Completed button
+● Add Dark / Light mode
+● Save tasks using localStorage
+● Add a loading skeleton
+The bonus should not break the required functionality.
+You must be able to explain the implementation yourself.
+Evaluation Criteria
+Area Weight
+React Component Structure 20%
+Props & Component Communication 10%
+State Management 15%
+useEffect & API Integration 15%
+TypeScript 10%
+UI & Responsive Design 10%
+Functionality & Event Handling 10%
+AI Usage 5%
+Code Quality & Engineering
+Reasoning
+5%
+Total 100%
+Important
+The application working correctly or looking visually attractive is not the only evaluation
+criterion.
+You will be evaluated on your ability to:
+Understand → Analyze UI → Think in Components → Plan → Build → Manage State →
+Integrate Data → Test → Debug → Use AI → Validate
+You should be able to explain:
+● Why you created each component.
+● Why state lives in a specific component.
+● Which data is passed through props.
+● Why a component re-renders.
+● Why useEffect is used.
+● How state changes update the UI.
+● Which AI suggestions you accepted, changed, or rejected.
+Do not submit code you cannot explain.
