@@ -1,0 +1,13 @@
+What did AI help me with?
+the architecture.md file
+the component breakdown
+the typescript interfaces
+
+What did I have to understand and verify myself?
+I had to verify and undertsand mostly everything 
+
+Which AI suggestion did I reject or modify, and why?
+I rejected the idea of using redux toolkit for state management, as it was overkill for this project.
+
+How did I decide where state should live?
+I decided to use local component state for the state, as it was the simplest solution for this project.
